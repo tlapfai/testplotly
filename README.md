@@ -84,21 +84,3 @@ def index(request):
     
 -------------------------
 
-{%load plotly_dash%}
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>I come from template inside!!</title>
-		{% plotly_header %}
-    </head>
-    <body>
-		ABC<br>
-		
-		
-		{%plotly_direct name="gamma_curve" %}<br>
-		DEF<br>
-		
-    </body>
-	{% plotly_footer %}
-</html>
