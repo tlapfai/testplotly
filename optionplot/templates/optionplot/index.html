@@ -1,17 +1,44 @@
 {%load plotly_dash%}
+{% load static %}
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>I come from template inside!!</title>
+        <title>Valuation</title>
+		<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+		<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 		{% plotly_header %}
     </head>
     <body>
-		ABC<br>
-		
-		
-		{%plotly_direct name="gamma_curve" %}<br>
-		DEF<br>
+	<div class="container">
+		<div class="loader-inner ball-spin-fade-loader"></div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="panel with-nav-tabs panel-default">
+					<div class="panel-heading">
+							<ul class="nav nav-tabs" role="tablist">
+								<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Default 1</a></li>
+								<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+								<li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+								<li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+							</ul>
+					</div>
+					<div class="panel-body">
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active" id="home">{% plotly_direct name="gamma_curve" %}</div>
+							<div role="tabpanel" class="tab-pane" id="profile">2...</div>
+							<div role="tabpanel" class="tab-pane" id="messages">3...</div>
+							<div role="tabpanel" class="tab-pane" id="settings">4...</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<table style="bolder: solid black">ABC</table>
+			</div>
+		</div>
+	</div>
 		
     </body>
 	{% plotly_footer %}
